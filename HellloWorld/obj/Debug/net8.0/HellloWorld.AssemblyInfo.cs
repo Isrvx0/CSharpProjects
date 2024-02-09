@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HellloWorld")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3b8b4a7020d002be50a9cbc442821e7b76ce01c4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f275e326a9d4d5a5ce13d1936e0b98e411b4e317")]
 [assembly: System.Reflection.AssemblyProductAttribute("HellloWorld")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HellloWorld")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

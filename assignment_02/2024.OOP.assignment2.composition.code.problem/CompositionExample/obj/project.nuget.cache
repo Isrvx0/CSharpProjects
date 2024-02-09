@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "UlXNWG86jtu6pjtxrNohw96xti6+S/dNTph7HF5M7PK7VULAIRd4t8Az3hGtn9votTI9dgxnjxWAy4RSdKlrfA==",
+  "success": true,
+  "projectFilePath": "C:\\S C H O O L\\Software Developer - Year Two\\CSharpProjects\\assignment_02\\2024.OOP.assignment2.composition.code.problem\\CompositionExample\\CompositionExample.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sosoa\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.15\\microsoft.windowsdesktop.app.ref.7.0.15.nupkg.sha512",
+    "C:\\Users\\sosoa\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.15\\microsoft.netcore.app.ref.7.0.15.nupkg.sha512",
+    "C:\\Users\\sosoa\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.15\\microsoft.aspnetcore.app.ref.7.0.15.nupkg.sha512",
+    "C:\\Users\\sosoa\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.15\\microsoft.netcore.app.host.win-x64.7.0.15.nupkg.sha512"
+  ],
+  "logs": []
+}
