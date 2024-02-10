@@ -1,4 +1,4 @@
-﻿using System;
+﻿
 // Charmander class
 class Charmander
 {
@@ -30,5 +30,3 @@ class Charmander
         return nickname;
     }
 }
-
-

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 class Program
 {
+    // Declare playAgain field at the class level
+    public static bool playAgain = true;
+
     static void Main(string[] args)
     {
         // Start the game
@@ -14,7 +17,7 @@ class Program
     {
         Console.WriteLine("Welcome to the Pokemon Battle Simulator!");
 
-        bool playAgain = true;
+        // Ask if the user wants to play
         while (playAgain)
         {
             // Ask for a name for the first trainer
@@ -38,15 +41,18 @@ class Program
             // Create Charmander
             Charmander charmander = new Charmander("Charmander");
 
-            // Start the battle
-            StartBattle(trainer1, trainer2);
+            // Create a new pokeball for each battle
+            Pokeball pokeball = new Pokeball();
+
+            // Start the battle with the pokeball
+            StartBattle(trainer1, trainer2, pokeball);
         }
 
         Console.WriteLine("Thanks for playing!");
     }
 
     // Method to start the battle
-    static void StartBattle(Trainer trainer1, Trainer trainer2)
+    static void StartBattle(Trainer trainer1, Trainer trainer2, Pokeball pokeball)
     {
         Console.WriteLine($"Trainer {trainer1.GetName()} challenges Trainer {trainer2.GetName()}!");
 
@@ -55,19 +61,23 @@ class Program
             // Trainer 1 throws the first pokeball
             trainer1.ThrowPokeball();
 
+            // Step 5: Release Charmander from the pokeball and let it do its battle cry
+            pokeball.ReleaseAndBattleCry(new Charmander("Charmander"));
+            Console.WriteLine("\n");
+
             // Trainer 2 throws the first pokeball
             trainer2.ThrowPokeball();
+
+            // Step 5: Release Charmander from the pokeball and let it do its battle cry
+            pokeball.ReleaseAndBattleCry(new Charmander("Charmander"));
+            Console.WriteLine("\n");
 
             // Trainer 1 returns the charmander back to its pokeball
             trainer1.ReturnPokemon();
 
             // Trainer 2 returns the charmander back to its pokeball
             trainer2.ReturnPokemon();
-
-            // Step 5: Release Charmander from the pokeball and let it do its battle cry
-            Pokeball pokeball = new Pokeball();
-            pokeball.Open();
-            pokeball.ReleaseCharmander(new Charmander("Charmander"));
-            pokeball.ReturnCharmander();
+            Console.WriteLine("\n");
         }
     }
+}
