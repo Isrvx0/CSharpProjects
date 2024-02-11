@@ -3,12 +3,10 @@ using System.Collections.Generic;
 
 class Program
 {
-    // Declare playAgain field at the class level
     public static bool playAgain = true;
 
     static void Main(string[] args)
     {
-        // Start the game
         StartGame();
     }
 
@@ -17,7 +15,7 @@ class Program
     {
         Console.WriteLine("Welcome to the Pokemon Battle Simulator!");
 
-        // Ask if the user wants to play
+        // While loop to keep playing the game
         while (playAgain)
         {
             // Ask for a name for the first trainer
@@ -34,18 +32,24 @@ class Program
             Console.WriteLine("Enter a name for the second trainer:");
             string trainer2Name = Console.ReadLine();
 
-            // Create trainers
+            // Create trainers/players
             Trainer trainer1 = new Trainer(trainer1Name);
             Trainer trainer2 = new Trainer(trainer2Name);
-
-            // Create Charmander
-            Charmander charmander = new Charmander("Charmander");
 
             // Create a new pokeball for each battle
             Pokeball pokeball = new Pokeball();
 
             // Start the battle with the pokeball
             StartBattle(trainer1, trainer2, pokeball);
+
+            // Ask if the player wants to play again
+            Console.WriteLine("Do you want to play again? (yes/no)");
+            string playAgainResponse = Console.ReadLine();
+            if (playAgainResponse.ToLower() == "no")
+            {
+                playAgain = false;
+            }
+
         }
 
         Console.WriteLine("Thanks for playing!");
@@ -54,29 +58,25 @@ class Program
     // Method to start the battle
     static void StartBattle(Trainer trainer1, Trainer trainer2, Pokeball pokeball)
     {
-        Console.WriteLine($"Trainer {trainer1.GetName()} challenges Trainer {trainer2.GetName()}!");
+        Console.WriteLine($"Player {trainer1.GetName()} VS Player {trainer2.GetName()}!");
 
-        for (int i = 0; i < 6; i++)
+        for (int count = 0; count < 6; count++)
         {
-            // Trainer 1 throws the first pokeball
+            Console.WriteLine($"Round {count + 1}"); // Round number
+
+            // Player 1 throws the pokeball
             trainer1.ThrowPokeball();
 
-            // Step 5: Release Charmander from the pokeball and let it do its battle cry
-            pokeball.ReleaseAndBattleCry(new Charmander("Charmander"));
+            // Release Pokémon from the pokeball, and the Pokémon do its battle cry
+            pokeball.ReleaseAndBattleCry(trainer1.GetNextPokemon());
             Console.WriteLine("\n");
 
-            // Trainer 2 throws the first pokeball
+            // Player 2 throws the first pokeball
             trainer2.ThrowPokeball();
 
-            // Step 5: Release Charmander from the pokeball and let it do its battle cry
-            pokeball.ReleaseAndBattleCry(new Charmander("Charmander"));
-            Console.WriteLine("\n");
-
-            // Trainer 1 returns the charmander back to its pokeball
-            trainer1.ReturnPokemon();
-
-            // Trainer 2 returns the charmander back to its pokeball
-            trainer2.ReturnPokemon();
+            // Release Pokémon from the pokeball, and the Pokémon do its battle cry
+            pokeball.ReleaseAndBattleCry(trainer2.GetNextPokemon());
+            Console.WriteLine("---------------"); // Separator
             Console.WriteLine("\n");
         }
     }

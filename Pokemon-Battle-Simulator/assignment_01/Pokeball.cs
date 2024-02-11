@@ -1,19 +1,16 @@
 ﻿using System;
 
-// Pokeball class
 class Pokeball
 {
-    private Charmander charmander;
-
-    // Method to release the Charmander
-    public void ReleaseAndBattleCry(Charmander pokemon)
+    // Method to release the Pokémon
+    public void ReleaseAndBattleCry(Pokemon pokemon)
     {
-        Console.WriteLine("The pokeball is thrown, which opens it up and released the charmander inside of it.\nThe charmander does its battle cry.");
-        charmander = pokemon;
-        charmander.BattleCry();
-        Console.WriteLine("The charmander is then returned to the pokeball.\n");
+        Console.WriteLine($"The pokeball is thrown, which opens it up and releases {pokemon.GetNickname()}!\nThe {pokemon.GetNickname()} does its battle cry.");
+        pokemon.BattleCry();
+        Console.WriteLine($"The {pokemon.GetNickname()} is returned to the pokeball.");
     }
 }
+
 
 // ------------------------------------------------ klemboard ------------------------------------------------
 
